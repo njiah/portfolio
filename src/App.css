@@ -1,9 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
+  font-family:'Courier New', Courier, monospace
 }
 
+.Row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 5%;
+  flex-wrap: wrap;
+}
+
+.Image {
+  height: 30vmin;
+  /*clip-path: polygon(20% 10%, 80% 5%, 95% 75%, 60% 90%, 15% 85%, 5% 50%);*/
+}
+.Logo{
+  padding: 2%;
+}
+.Logo:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+img {
+  border-radius: 25%;
+}
+
+.About{
+  text-align: left;
+  font-size: 1em;
+  padding: 10%;
+  color:bisque;
+}
+.Name{
+  font-size: 1.5em;
+  color: #e69360;
+}
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
@@ -28,6 +69,21 @@
   color: #61dafb;
 }
 
+.Navbar {
+  height: 100%;
+  width: 12%;
+  position: fixed;
+  z-index: 1;
+  top: 40%;
+  right: 2%;
+  transition: .5s ease;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: medium;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +92,5 @@
     transform: rotate(360deg);
   }
 }
+
+
