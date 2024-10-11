@@ -1,41 +1,52 @@
 import React from 'react';
 import './App.css';
 import Image from './img/profile.png';
-import Python from './img/python.png';
-import C from './img/C_Logo.png';
 import VeritcalNav from './components/Navbar.js';
-import About from './components/About.js';
-import { PythonOriginal, COriginal, CplusplusOriginal, Html5Original, Css3Original, JavascriptOriginal, SqliteOriginal, GitOriginal, TensorflowOriginal, PytorchOriginal } from 'devicons-react';
+import Skills from './components/Skills.js';
+import Experience from './components/Experience.js';
+import Projects from './components/Projects.js';
+import Education from './components/Education.js';
+import aboutRef from './components/Navbar.js';
 
 function App() {
   return (
     <div class="App">
-      <header className="App-header">
+      <section>
+        <header className="App-header" id="about" ref={{aboutRef}}>
         <div className="Row">
-          
-          <img src={Image} className="Image" alt="logo" />
-          <p class="About">Hi! I'm Ngwe Sandar Linn.<br></br>My friends call me
-          <span class="Name"> Jiah</span>.
-          </p>
+          <img className="Image" src={Image} alt="logo" />
+            <div className="About">
+              <h1>Hi! I'm Ngwe Sandar Linn.<br></br>My friends call me
+              <span class="Name"> Jiah</span>.
+              </h1>
+              <p>I'm a software engineer with a passion for Machine Learning! Currently working on a manufacturing app for Starling Cycles.</p>
+          </div>
         </div>
         
         
-        <div className="Row">
-          <div className="Logo"><PythonOriginal size={100}/></div>
-          <div className='Logo'><COriginal size={100}/></div>
-          <div className='Logo'><CplusplusOriginal size={100}/></div>
-          <div className='Logo'><Html5Original size={100}/></div>
-          <div className='Logo'><Css3Original size={100}/></div>
-          <div className='Logo'><JavascriptOriginal size={100}/></div>
-          <div className='Logo'><SqliteOriginal size={100}/></div>
-          <div className='Logo'><GitOriginal size={100}/></div>
-          <div className='Logo'><TensorflowOriginal size={100}/></div>
-          <div className='Logo'><PytorchOriginal size={100}/></div>
-        </div>
+        
         <VeritcalNav />
         
       </header>
-      <About />
+      </section>
+      
+      <section>
+        <Projects />
+      </section>
+
+      <section>
+        <Education />
+      </section>
+
+      <section>
+        <Experience />
+      </section>
+
+      <section>
+        <div className="App-header">
+          <Skills/>
+        </div>
+      </section>
     </div>
   );
 }

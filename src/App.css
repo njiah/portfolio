@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 .App {
   text-align: center;
@@ -10,16 +8,15 @@
 .Row{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  padding: 5%;
   flex-wrap: wrap;
+  padding: 2%;
+  margin-right: 10%;
 }
 
 .Image {
-  height: 30vmin;
+  height: 40vmin;
+  margin: 5%;
   /*clip-path: polygon(20% 10%, 80% 5%, 95% 75%, 60% 90%, 15% 85%, 5% 50%);*/
 }
 .Logo{
@@ -29,28 +26,38 @@
   transform: scale(1.1);
   transition: 0.5s;
 }
+.col {
+  padding: 3%;
+  font-size: 0.75em;
+}
 img {
-  border-radius: 25%;
+  border-radius: 55%;
 }
 
 .About{
   text-align: left;
-  font-size: 1em;
-  padding: 10%;
   color:bisque;
+  width:50%;
+  margin-left:3%;
+  margin-top: 10%;
+}
+.About h1{
+  font-size: 1.3em;
+  color: bisque;
+}
+.About p{
+  font-size: 0.5em;
+  color: rgb(253, 238, 221);
+  width: 70%;
 }
 .Name{
   font-size: 1.5em;
   color: #e69360;
 }
-.App-logo {
-  height: 30vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .Image {
+    animation: Image-spin 2s ease-in-out 3;
   }
 }
 
@@ -84,13 +91,72 @@ img {
   font-size: medium;
 }
 
-@keyframes App-logo-spin {
-  from {
+
+@keyframes Image-spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotate(6deg);
   }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.brat {
+  width:100%;
+  height: 100%;
+  background-color: #9bd555;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.brat h1{
+  font-size: calc(20px + 2vmin);
+  width: 78%;
+  text-align: end;
+  margin: 5%;
+}
+.brat table{
+  width: 78%;
+  margin-left:5%;
+  padding-left: 10%;
+  border-collapse: collapse;
+}
+.brat th{
+  background-color: #9bd555;
+  color: black;
+  text-align: end;
+  border-bottom: 1px solid black;
+  padding-bottom: 2%;
+}
+
+.brat td{
+  padding-top: 2.5%;
+  text-align: end;
+}
+.brat h2{
+  text-align: end;
+}
+.brat ul{
+  padding-left: 10%;
+  text-align: end;
+  list-style: none;
+}
+
+.white {
+  color: "black";
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+.white h1{
+  font-size: calc(20px + 2vmin);
+  width:80%;
+  text-align: start;
+  margin: 5%;
 }
 
 
