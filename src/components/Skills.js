@@ -4,15 +4,15 @@ function Skills() {
     return (
         <div className="Row">
             <div className="col">
-            <div className="Logo"><PythonOriginal size={100}/></div>
+            <div className="Logo"><PythonOriginal size={80}/></div>
             <p> Python </p>
             </div>
             <div className="col">
-                <div className="Logo"><COriginal size={100}/></div>
+                <div className="Logo"><COriginal size={80}/></div>
                 <p> C </p>
             </div>
             <div className="col">
-                <div className="Logo"><CplusplusOriginal size={100}/></div>
+                <div className="Logo"><CplusplusOriginal size={80}/></div>
                 <p> C++ </p>
             </div>
             <div className="col">

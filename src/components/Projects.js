@@ -8,56 +8,56 @@ function Projects() {
         {
             id: 1,
             title: "Deepfake Detector",
-            description: "Dissertation project",
+            description: "Full stack web app with Flask which detects deepfakes using a CNN model trained on DFDC dataset.",
             image: deepfake,
             link: "https://github.com/njiah/deepfake_detector",
             type: "Academic"
         },
         {
             title: "DoodleCode",
-            description: "Final year group project",
+            description: "Containerized web app with Django detecting wireframe sketches using YOLO models, and generates code with multi-agent algorithm.",
             image: "https://via.placeholder.com/150",
             link: "",
             type: "Academic"
         },
         {
             title: "Little Lemon Restaurant",
-            description: "Booking website with Django",
+            description: "Full stack booking system with Django.",
             image: "https://via.placeholder.com/150",
             link: "",
             type: "Personal"
         },
         {
             title: "Manufacture Streamlining App",
-            description: "Mobile app for Starling Cycles made with Flutter",
+            description: "Flutter app which streamlines manufacturing process.",
             image: "https://via.placeholder.com/150",
             link: "",
             type: "Work"
         },
         {
             title: "Brizzy Hotel",
-            description: "First year individual project with Flask",
+            description: "Full stack hotel booking web application with Flask.",
             image: "https://via.placeholder.com/150",
             link: "",
             type: "Academic"
         },
         {
-            title: "UWE Flix",
-            description: "Group project with Tkinter",
+            title: "UWEFlix",
+            description: "Tkinter project for movie booking.",
             image: "https://via.placeholder.com/150",
             link: "",
             type: "Academic"
         },
         {
             title: "BB8",
-            description: "Made with Arduino",
+            description: "Star Wars character inspired robot with 3D printed head and remote controlled body with Arduino.",
             image: BB8,
             link: "https://www.linkedin.com/in/ngwe-sandar-linn-63990a1ba/details/projects/",
             type: "Personal"
         },
         {
             title: "Disinfection Rover",
-            description: "Remote controlled and written in C++",
+            description: "Remote controlled rover written in C++ for disinfecting surfaces donated to the quarantine hospital in Yangon.",
             image: Rover,
             link: "https://www.linkedin.com/in/ngwe-sandar-linn-63990a1ba/details/projects/",
             type: "Personal"
