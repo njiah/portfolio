@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import { Link } from 'react-scroll';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
@@ -7,40 +7,73 @@ const VeritcalNav = (props) => {
     gsap.registerPlugin(ScrollTrigger);
     const navbarRef = useRef(null);
 
-    const sections = gsap.utils.toArray("section");
-    const navbar = document.getElementById("navbar");
+    const [aboutcolorChange, aboutsetColorChange] = useState(false);
+    const [projectscolorChange, projectssetColorChange] = useState(false);
+    const [educationcolorChange, educationsetColorChange] = useState(false);
+    const [experiencecolorChange, experiencesetColorChange] = useState(false);
+    const [contactcolorChange, contactsetColorChange] = useState(false);
 
-    const navColors = ["white", "black", "black", "black", "white"];
-    let sectionHeight
-
-    sections.forEach(function(section, index){
-        ScrollTrigger.create({
-            trigger: section,
-            start: "top bottom",
-            end: "bottom bottom",
-            markers: false,
-            animation: gsap.to(navbar, {
-                color: navColors[index], 
-                immediateRender: false,
-            }),
-            toggleActions: "restart none none reverse",
-            preventOverlaps: true,
-        });
-    });
-
-    ScrollTrigger.addEventListener("refreshInit", () => {
-        sectionHeight = sections.map(section => section.offsetHeight);
-    }
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log(entry.target.id);
+                switch(entry.target.id) {
+                case "about": 
+                    aboutsetColorChange(true);
+                    projectssetColorChange(false);
+                    educationsetColorChange(false);
+                    experiencesetColorChange(false);
+                    contactsetColorChange(false);
+                    break;
+                case "projects": 
+                    aboutsetColorChange(false);
+                    projectssetColorChange(true);
+                    educationsetColorChange(false);
+                    experiencesetColorChange(false);
+                    contactsetColorChange(false);
+                    break;
+                case "education": 
+                    aboutsetColorChange(false);
+                    projectssetColorChange(false);
+                    educationsetColorChange(true);
+                    experiencesetColorChange(false);
+                    contactsetColorChange(false);
+                    break;
+                case "experience": 
+                    aboutsetColorChange(false);
+                    projectssetColorChange(false);
+                    educationsetColorChange(false);
+                    experiencesetColorChange(true);
+                    contactsetColorChange(false);
+                    break;
+                default: 
+                    aboutsetColorChange(false);
+                    projectssetColorChange(false);
+                    educationsetColorChange(false);
+                    experiencesetColorChange(false);
+                    contactsetColorChange(true);
+                    break;
+                }
+            }
+        }
     );
+    }, {
+        root: null,
+        threshold: 0.5
+    });
+    sections.forEach(section => {
+        observer.observe(section);
+    });
     
         
     return (
         <div className="Navbar" ref={{navbarRef}} id="navbar">
-            <Link to="about" smooth={true}>About</Link>
-            <Link to="projects">Projects</Link>
-            <Link to="education">Education</Link>
-            <Link to="experience">Experience</Link>
-            <Link to="contact">Contact</Link>
+            <Link to="about" smooth={true} className={aboutcolorChange? "navLinkFocus" : "navLink"}>About</Link>
+            <Link to="projects" smooth={true} className={projectscolorChange? "navLinkFocus" :"navLink"}>Projects</Link>
+            <Link to="education" smooth={true} className={educationcolorChange? "navLinkFocus" :"navLink"}>Education</Link>
+            <Link to="experience" smooth={true} className={experiencecolorChange? "navLinkFocus" :"navLink"}>Experience</Link>
+            <Link to="contact" smooth={true} className={contactcolorChange? "navLinkFocus" :"navLink"}>Contact</Link>
             
         </div>
     );

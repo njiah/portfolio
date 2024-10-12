@@ -1,8 +1,7 @@
-import educationRef from './Navbar.js';
 
 function Education() {
   return (
-    <div id="education" className="brat" ref={{educationRef}}>
+    <div id="education" className="brat">
       <h1>Education</h1>
       <table>
         <tr>
