@@ -7,6 +7,9 @@ const VeritcalNav = (props) => {
     gsap.registerPlugin(ScrollTrigger);
     const navbarRef = useRef(null);
 
+    //const aboutNav = document.getElementById("aboutNav");
+    //const projectsNav = document.getElementById("projectsNav");
+
     const [aboutcolorChange, aboutsetColorChange] = useState(false);
     const [projectscolorChange, projectssetColorChange] = useState(false);
     const [educationcolorChange, educationsetColorChange] = useState(false);
