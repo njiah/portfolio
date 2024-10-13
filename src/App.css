@@ -17,6 +17,8 @@
 .Image {
   height: 40vmin;
   margin: 5%;
+  display: block;
+  border-radius: 10%;
   /*clip-path: polygon(20% 10%, 80% 5%, 95% 75%, 60% 90%, 15% 85%, 5% 50%);*/
 }
 .Logo{
@@ -29,9 +31,6 @@
 .col {
   padding: 3%;
   font-size: 0.75em;
-}
-img {
-  border-radius: 55%;
 }
 
 .About{
@@ -69,6 +68,8 @@ img {
   padding-right: 5%;
   display: flex;
   flex-direction: row;
+  margin-left: 3%;
+  width: 50%;
 }
 .Contact a{
   height: auto;
@@ -307,6 +308,112 @@ img {
   font-weight: bold;
   text-decoration: none;
 }
+
+@media screen and (max-width: 768px) {
+  .Image{
+    display: none;
+  }
+  .About{
+    width: 80%;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+  .Contact{
+    width: 80%;
+    margin-left: 0%;
+  }
+  .Navbar{
+    width: 20%;
+  }
+  .Row{
+    padding: 1.7%;
+  }
+  .navLinkFocus{
+    margin: 2%;
+    padding: 2%;
+  }
+  .filter{
+    width: 100%;
+    margin-left: 0%;
+  }
+  .card{
+    min-width: 10vh;
+    width: 30%;
+    margin: 1%;
+  }
+  .brat h1{
+    width: 70%;
+  }
+  .brat table{
+    width: 75%;
+    margin-left: 0%;
+    padding-left: 0%;
+  }
+  .brat .Row{
+    width: 75%;
+    flex-direction: column;
+    align-items: end;
+  }
+  .col{
+    padding: 1%;
+  }
+  .experience{
+    width: 75%;
+    margin-left: 2%;
+    margin-right: 5%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .Image{
+    border-radius: 50%;
+  }
+  .About{
+    width: 40%;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+  .About .Row{
+    flex-direction: column;
+    align-items: end;
+  }
+  .Contact{
+    padding-right: 40%;
+  }
+  .Contact a{
+    margin-left: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-style: none;
+    box-shadow: none;
+  }
+
+  .card{
+    min-width: 10vh;
+    width: 40%;
+    margin: 1%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .Image{
+    border-radius: 20%;
+  }
+  .About{
+    width: 50%;
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+  .filter{
+    width: 80%;
+    margin-left: 5%;
+  }
+  .card{
+    min-width: 20vh;
+    width: 8%;
+  }
+}
+
+
+
 
 
 

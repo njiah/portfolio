@@ -26,7 +26,7 @@ function Experience() {
   return (
     <div className="white" id="experience">
       <h1>Experience</h1>
-=            {experience.map((exp) => (
+            {experience.map((exp) => (
             <div className="experience">
                 <h3>{exp.title} | <a href={exp.link}>{exp.company}</a></h3>
                 <p> {exp.date}</p>  
