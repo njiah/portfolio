@@ -80,7 +80,7 @@ const VeritcalNav = (props) => {
             <Link to="projects" smooth={true} className={projectscolorChange? "navLinkFocus" :"navLink"}>Projects</Link>
             <Link to="education" smooth={true} className={educationcolorChange? "navLinkFocus" :"navLink"}>Education</Link>
             <Link to="experience" smooth={true} className={experiencecolorChange? "navLinkFocus" :"navLink"}>Experience</Link>
-            <Link to="contact" smooth={true} className={contactcolorChange? "navLinkFocus" :"navLink"}>Contact</Link>
+            <Link to="skills" smooth={true} className={contactcolorChange? "navLinkFocus" :"navLink"}>Skills</Link>
             
         </div>
     );

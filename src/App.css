@@ -286,6 +286,14 @@ img {
   display: inline-block;
   border-bottom:1px solid black;
 }
+.footer {
+  font-size: 12px;
+}
+.footer a{
+  color: #9bd555;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 
 

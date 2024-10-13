@@ -7,6 +7,7 @@ import Experience from './components/Experience.js';
 import Projects from './components/Projects.js';
 import Education from './components/Education.js';
 import CV from '../src/NS_Linn.pdf'
+import Footer from './components/footer.js';
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
           <Skills/>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
