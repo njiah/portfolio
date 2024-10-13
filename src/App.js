@@ -8,6 +8,7 @@ import Projects from './components/Projects.js';
 import Education from './components/Education.js';
 import CV from '../src/NS_Linn.pdf'
 import Footer from './components/footer.js';
+import { ReactTyped } from 'react-typed';
 
 function App() {
   return (
@@ -17,10 +18,20 @@ function App() {
         <div className="Row">
           <img className="Image" src={Image} alt="logo" />
           <div className="About">
-              <h1>Hi! I'm Ngwe Sandar Linn.<br></br>My friends call me
-              <span class="Name"> Jiah</span>.
+              <h1>Hi! I'm<br/>
+              <span class="Name"> {" "}
+              <ReactTyped
+                  strings={["Ngwe Sandar Linn.", "Jiah."]}
+                  typeSpeed={100}
+                  loop
+                  backSpeed={50}
+                  cursorChar={"|"}
+                  showCursor={true}
+              />
+              </span>
+              
               </h1>
-              <p>I'm a software engineer with a passion for Machine Learning! Currently working on a manufacturing app for <a class="App-link" href="https://www.starlingcycles.com">Starling Cycles.</a><br/>Feel free to contact me via LinkedIn or mail!</p>
+              <p>A graduate software engineer with a passion for Machine Learning! Currently working on a manufacturing app for <a class="App-link" href="https://www.starlingcycles.com">Starling Cycles.</a><br/>Feel free to contact me via LinkedIn or mail!</p>
             <div className="Contact">
                 <a href="https://github.com/njiah"><h5>GitHub</h5></a>
                 <a href="https://www.linkedin.com/in/ngwe-sandar-linn-63990a1ba/"><h5>LinkedIn</h5></a>
