@@ -62,7 +62,7 @@ const VeritcalNav = (props) => {
         );
         }, {
             root: null,
-            threshold: 0.5
+            threshold: 0.2
         });
         sections.forEach((section) => {
             observer.observe(section);
@@ -70,7 +70,6 @@ const VeritcalNav = (props) => {
         return () => {
             sections.forEach((section) => {
                 observer.unobserve(section);
-
             });
         };
     }, []);

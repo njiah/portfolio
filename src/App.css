@@ -210,15 +210,14 @@ img {
 }
 
 .card {
-  width: 20%;
-  min-width: 30vh;
-  min-height: auto;
+  width: 10%; 
+  min-width: 20vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: end;
-  flex-wrap: wrap;
   padding: 2%;
-  margin: 2%;
+  margin: 2%; 
   border-style: solid;
   border-radius: 10px;
   border-width: 0.3vh;
@@ -237,6 +236,23 @@ img {
 .card h4:hover{
   font-weight: bold;
 }
+.card p{
+  font-size: 0.8em;
+}
+.more{
+  font-size: 0.8em;
+  display: inline-block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+.card:hover .more{
+  opacity: 1;
+  max-height: 100px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
 
 
 
@@ -262,10 +278,7 @@ img {
   background-color: whitesmoke;
   color: black;
 }
-.filter img {
-  border-radius: 30%;
-  width: 30vh;
-}
+
 
 
 

@@ -6,8 +6,8 @@ import deepfake from '../img/deepfake.png';
 function Projects() {
     const projects = [
         {
-            id: 1,
             title: "Deepfake Detector",
+            subtitle: "Python, Flask, OpenCV, Pytorch, Tensorflow",
             description: "Full stack web app with Flask which detects deepfakes using a CNN model trained on DFDC dataset.",
             image: deepfake,
             link: "https://github.com/njiah/deepfake_detector",
@@ -15,6 +15,7 @@ function Projects() {
         },
         {
             title: "DoodleCode",
+            subtitle: "Python, Django, YOLO, Multi-agent algorithm, Kaggle",
             description: "Containerized web app with Django detecting wireframe sketches using YOLO models, and generates code with multi-agent algorithm.",
             image: "https://via.placeholder.com/150",
             link: "",
@@ -22,34 +23,35 @@ function Projects() {
         },
         {
             title: "Little Lemon Restaurant",
+            subtitle: "Python, Django",
             description: "Full stack booking system with Django.",
-            image: "https://via.placeholder.com/150",
-            link: "",
+            link: "https://github.com/njiah/littleLemon",
             type: "Personal"
         },
         {
             title: "Manufacture Streamlining App",
-            description: "Flutter app which streamlines manufacturing process.",
-            image: "https://via.placeholder.com/150",
-            link: "",
+            subtitle: "Flutter",
+            description: "Mobile app for Starling Cycles to streamline manufacturing process.",
+            link: "https://github.com/njiah/starlingcycles",
             type: "Work"
         },
         {
             title: "Brizzy Hotel",
+            subtitle: "Python, Flask",
             description: "Full stack hotel booking web application with Flask.",
-            image: "https://via.placeholder.com/150",
             link: "",
             type: "Academic"
         },
         {
             title: "UWEFlix",
+            subtitle: "Python, Tkinter",
             description: "Tkinter project for movie booking.",
-            image: "https://via.placeholder.com/150",
             link: "",
             type: "Academic"
         },
         {
             title: "BB8",
+            subtitle: "Arduino, 3D Printing",
             description: "Star Wars character inspired robot with 3D printed head and remote controlled body with Arduino.",
             image: BB8,
             link: "https://www.linkedin.com/in/ngwe-sandar-linn-63990a1ba/details/projects/",
@@ -57,11 +59,30 @@ function Projects() {
         },
         {
             title: "Disinfection Rover",
+            subtitle: "C++, Arduino",
             description: "Remote controlled rover written in C++ for disinfecting surfaces donated to the quarantine hospital in Yangon.",
             image: Rover,
             link: "https://www.linkedin.com/in/ngwe-sandar-linn-63990a1ba/details/projects/",
             type: "Personal"
         },
+        {
+            title: "PintOs",
+            subtitle: "C, Unix",
+            description: "Operating system project implementing system calls, and exploitation.",
+            link: "",
+        },
+        {
+            title: "Chatbot",
+            subtitle: "Python",
+            description: "Simple Chatbot with NLP.",
+            link: "",
+        },
+        {
+            title: "Beach Cleaning Environment",
+            subtitle: "Python, Mesa Library",
+            description: "Agent-based model for beach cleaning.",
+            link: "",
+        }
     ];
     const [selectedProjects, setSelectedProjects] = useState('All');
 
@@ -77,8 +98,10 @@ function Projects() {
         }
     });
 
+    const [showMore, setshowMore] = useState(false);   
+
   return (
-    <div className="white">
+    <div className="white" id="projects">
         <h1>Projects</h1>
         <div className='filter'>
             <label>Filter by:</label>
@@ -89,17 +112,18 @@ function Projects() {
                 <option value="Work">Work</option>
             </select>
         </div>
-        <div className="filter">
+        <div className="filter" id="projects">
             {filteredProjects.map((project) => (
-                <a href={project.link} key={project.id} className="card">
-                    <img src={project.image} alt="Deepfake Detector" />
+                <a href={project.link} className="card">
                     <h4>{project.title}</h4>
-                    <p>{project.description}</p>
+                    <p>{project.subtitle}
+                        <span className="more">{project.description}</span>
+                    </p>
                 </a>
             ))}
         </div>
     </div>
-  );
+    )
 }
 
 export default Projects;
