@@ -253,9 +253,6 @@ img {
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
-
-
-
 .filter{
   width:80%;
   margin-left:5%;
@@ -277,6 +274,17 @@ img {
 .filter select:hover{
   background-color: whitesmoke;
   color: black;
+}
+
+.experience {
+  width: 80%;
+  text-align: start;
+  align-items: start;
+  margin-left: 5%;
+  margin-right: 5%;
+  flex-direction: column;
+  display: inline-block;
+  border-bottom:1px solid black;
 }
 
 
