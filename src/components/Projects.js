@@ -1,5 +1,5 @@
 //import { type } from "@testing-library/user-event/dist/type";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BB8 from '../img/BB8.JPG';
 import Rover from '../img/rover.jpeg';
 import deepfake from '../img/deepfake.png';
@@ -101,8 +101,6 @@ function Projects() {
         }
     });
     
-    const [showMore, setshowMore] = useState(false);   
-
     const containerRef = useRef(null);
     const scrollRight = () => {
         const columnWidth = 300;
@@ -122,6 +120,27 @@ function Projects() {
             }
         )
     }
+    const [isVisible, setIsVisible] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            const container = containerRef.current;
+            if (container) {
+                const rect = container.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                if (rect.top < windowHeight && rect.bottom >= 0) {
+                    setIsVisible(true);
+                }
+                else {
+                    setIsVisible(false);
+                }
+            }
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }
+    , []);
 
   return (
     <div className="white" id="projects">
@@ -135,9 +154,9 @@ function Projects() {
                 <option value="Work">Work</option>
             </select>
         </div>
-        <div className="Scroll" ref={containerRef} id="projects">
-            {filteredProjects.map((project) => (
-                <a href={project.link} className="card">
+        <div className={`Scroll ${isVisible? 'visible' : ''}`} ref={containerRef} id="projects">
+            {filteredProjects.map((project, index) => (
+                <a href={project.link} id={index} className="card">
                     <h4>{project.title}</h4>
                     <p>{project.subtitle}
                         <span className="more">{project.description}</span>

@@ -1,9 +1,34 @@
+import React, { useRef, useEffect, useState } from 'react';
 
 function Education() {
+    const containerRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {   
+            const container = containerRef.current;
+            if (container) {
+                const rect = container.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                if (rect.top < windowHeight && rect.bottom >= 0) {
+                    setIsVisible(true);
+                }
+                else {
+                    setIsVisible(false);
+                }
+            }
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    }
+    }
+    , []);
+
   return (
     <div id="education" className="brat">
       <h1>Education</h1>
-      <table>
+      <table className={`container ${isVisible ? 'show' : ''}`} ref={containerRef}>
         <tr>
             <th>Qualification</th>
             <th>Institution</th>
