@@ -3,6 +3,9 @@ import { useState } from "react";
 import BB8 from '../img/BB8.JPG';
 import Rover from '../img/rover.jpeg';
 import deepfake from '../img/deepfake.png';
+import { useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 function Projects() {
     const projects = [
         {
@@ -97,8 +100,28 @@ function Projects() {
             return project.type === selectedProjects;
         }
     });
-
+    
     const [showMore, setshowMore] = useState(false);   
+
+    const containerRef = useRef(null);
+    const scrollRight = () => {
+        const columnWidth = 300;
+        containerRef.current.scrollBy(
+            {
+                left: columnWidth,
+                behavior: 'smooth'
+            }
+        )
+    }
+    const scrollLeft = () => {
+        const columnWidth = 300;
+        containerRef.current.scrollBy(
+            {
+                left: -columnWidth,
+                behavior: 'smooth'
+            }
+        )
+    }
 
   return (
     <div className="white" id="projects">
@@ -112,7 +135,7 @@ function Projects() {
                 <option value="Work">Work</option>
             </select>
         </div>
-        <div className="filter" id="projects">
+        <div className="Scroll" ref={containerRef} id="projects">
             {filteredProjects.map((project) => (
                 <a href={project.link} className="card">
                     <h4>{project.title}</h4>
@@ -121,6 +144,10 @@ function Projects() {
                     </p>
                 </a>
             ))}
+        </div>
+        <div className="scrollButtons">
+            <button onClick={scrollLeft}><FontAwesomeIcon icon={faArrowLeft} size="20"/></button>
+            <button onClick={scrollRight}><FontAwesomeIcon icon={faArrowRight}/></button>
         </div>
     </div>
     )

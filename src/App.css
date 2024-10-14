@@ -100,7 +100,7 @@
 
 .App-header {
   /*background-color: #282c34;*/
-  background-color: #9bd555;
+  background-color: #8ACE00;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -168,7 +168,7 @@
 .brat {
   width:100%;
   height: 100%;
-  background-color: #9bd555;
+  background-color: #8ACE00;
   color: black;
   min-height: 100vh;
   display: flex;
@@ -187,7 +187,7 @@
   border-collapse: collapse;
 }
 .brat th{
-  background-color: #9bd555;
+  background-color: #8ACE00;
   color: black;
   text-align: end;
   border-bottom: 1px solid black;
@@ -224,14 +224,12 @@
 }
 
 .card {
-  width: 10%; 
-  min-width: 20vh;
-  height: auto;
+  min-width: 25vh;
+  margin: 1%;
   display: flex;
   flex-direction: column;
   align-items: end;
   padding: 2%;
-  margin: 2%; 
   border-style: solid;
   border-radius: 10px;
   border-width: 0.3vh;
@@ -267,13 +265,44 @@
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
+.Scroll{
+  width: 80%;
+  height: 100%;
+  min-height: 60vh;
+  padding: 2%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));  
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  grid-gap: 5%;
+}
+.scrollButtons{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2%;
+}
+.scrollButtons button{
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 0.1vh;
+  padding: 1%;
+  color: black;
+  font-size: 1em;
+  text-decoration: none;
+  box-shadow: 0px 0px 5px black;
+}
 .filter{
   width:80%;
   margin-left:5%;
   margin-bottom: 5%;
+  align-items: start;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 }
 .filter select{
   border-style: solid;
@@ -289,6 +318,7 @@
   background-color: whitesmoke;
   color: black;
 }
+
 
 .experience {
   width: 80%;
@@ -326,7 +356,7 @@
     width: 20%;
   }
   .Row{
-    padding: 1.7%;
+    width: 70%;
   }
   .navLinkFocus{
     margin: 2%;
@@ -334,12 +364,16 @@
   }
   .filter{
     width: 100%;
-    margin-left: 0%;
   }
   .card{
-    min-width: 10vh;
-    width: 30%;
-    margin: 1%;
+    min-width: 20vh;
+  }
+  .Scroll{
+    width: 70%;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+  .scrollButtons{
+    width: 70%;
   }
   .brat h1{
     width: 70%;
@@ -386,17 +420,15 @@
     border-style: none;
     box-shadow: none;
   }
-
   .card{
-    min-width: 10vh;
-    width: 40%;
-    margin: 1%;
+    min-width: 20vh;
+  }
+  .Scroll{
+    width: 80%;
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
   }
 }
 @media screen and (min-width: 1024px) {
-  .Image{
-    border-radius: 20%;
-  }
   .About{
     width: 50%;
     margin-left: 0%;
@@ -407,8 +439,10 @@
     margin-left: 5%;
   }
   .card{
-    min-width: 20vh;
-    width: 8%;
+    min-width: 30vh;
+  }
+  .Scroll{
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   }
 }
 
